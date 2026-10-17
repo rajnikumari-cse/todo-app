@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo App</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <main class="todo-container">
+        <h1 id="main-heading">My Todo List</h1>
+        <p class="subtitle">Organize your day, one task at a time.</p>
+
+        <form id="task-form" class="input-section">
+            <input id="todo-input" type="text"
+                   placeholder="Enter your task..." required>
+
+            <select id="todo-priority" aria-label="Task priority">
+                <option value="Medium">Medium Priority</option>
+                <option value="High">High Priority</option>
+                <option value="Low">Low Priority</option>
+            </select>
+
+            <input id="todo-date" type="date" aria-label="Task due date">
+
+            <button id="add-button" type="submit">Add Task</button>
+        </form>
+
+        <section class="task-summary">
+            <div class="summary-card total-card">
+                <span>Total Tasks</span>
+                <strong id="todo-count">0</strong>
+            </div>
+            <div class="summary-card pending-card">
+                <span>Pending</span>
+                <strong id="pending-count">0</strong>
+            </div>
+            <div class="summary-card completed-card">
+                <span>Completed</span>
+                <strong id="completed-count">0</strong>
+            </div>
+        </section>
+
+        <section class="filter-section">
+            <input id="search-input" type="search"
+                   placeholder="Search your tasks...">
+
+            <select id="priority-filter" aria-label="Filter by priority">
+                <option value="All">All Priorities</option>
+                <option value="High">High Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="Low">Low Priority</option>
+            </select>
+
+            <select id="status-filter" aria-label="Filter by status">
+                <option value="All">All Tasks</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+                <option value="Overdue">Overdue</option>
+            </select>
+        </section>
+
+        <div class="list-header">
+            <h2 class="list-heading">Your Tasks</h2>
+            <button id="clear-completed" type="button">
+                Clear Completed
+            </button>
+        </div>
+
+        <ul id="todo-list"></ul>
+
+        <p id="empty-message">No tasks yet. Add your first task!</p>
+        <p id="no-results">No matching tasks found.</p>
+    </main>
+
+    <script src="todo.js"></script>
+</body>
+</html>
